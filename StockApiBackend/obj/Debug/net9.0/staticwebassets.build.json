@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "TRnpcbK2ZAXo8jo/ShuJkwJ7gtTh+EOPRJHPVJQyMco=",
+  "Source": "StockApiBackend",
+  "BasePath": "_content/StockApiBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

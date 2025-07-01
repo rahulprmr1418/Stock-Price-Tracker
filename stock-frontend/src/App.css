@@ -1,0 +1,207 @@
+/* App.css - Decent, Professional, White Inputs, Responsive */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  --primary-color: #007bff; /* Professional Blue */
+  --primary-dark: #0056b3;
+  --accent-color: #28a745; /* A subtle green for success/positive feedback */
+  --text-color: #343a40; /* Dark grey for body text */
+  --light-text-color: #6c757d; /* Lighter grey for secondary text/placeholders */
+  --background-color: #f8f9fa; /* Very light grey background */
+  --card-background: #ffffff; /* White card background */
+  --error-color: #dc3545; /* Standard red for errors */
+  --border-color: #ced4da; /* Slightly darker light grey for input borders for better contrast */
+  --input-border-focus: #80bdff; /* Blue border on focus */
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --shadow-medium: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif; /* Readable body font */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.app-container {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 6px 18px var(--shadow-medium); /* Slightly more prominent shadow for definition */
+  padding: 40px;
+  max-width: 550px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid var(--border-color); /* Added border for definition */
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif; /* More formal heading font */
+  color: var(--primary-dark);
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+.input-group {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1em;
+}
+
+input[type="text"],
+input[type="date"] {
+  /* --- KEY CHANGE FOR WHITE INPUTS --- */
+  background-color: white; /* Explicitly set to white */
+  /* --- End KEY CHANGE --- */
+
+  width: calc(100% - 22px); /* Account for padding and border */
+  padding: 10px 10px;
+  border: 1px solid var(--border-color); /* Ensures border is visible against white */
+  border-radius: 5px;
+  font-size: 1em;
+  color: var(--text-color);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  -webkit-appearance: none; /* For consistent styling of date input across browsers */
+}
+
+input[type="text"]::placeholder,
+input[type="date"]::placeholder {
+  color: var(--light-text-color);
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+  border-color: var(--input-border-focus);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Bootstrap-like focus glow */
+  outline: none;
+}
+
+/* Specific style for date input icon for better professionalism */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg) brightness(0.9); /* Makes the calendar icon blue */
+  cursor: pointer;
+}
+
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.05em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease; /* Added box-shadow transition */
+  margin-top: 20px;
+  letter-spacing: 0.2px;
+  box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px var(--shadow-light); /* Slight lift on hover */
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.error-message {
+  color: var(--error-color);
+  margin-top: 25px;
+  font-size: 0.95em;
+  font-weight: 500;
+  background-color: rgba(220, 53, 69, 0.08);
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid var(--error-color);
+  text-align: left;
+}
+
+.result-container {
+  margin-top: 30px;
+  padding: 25px;
+  background-color: #e9f7ef; /* Light green for positive result */
+  border-radius: 8px;
+  border: 1px solid var(--accent-color);
+  box-shadow: 0 2px 8px var(--shadow-light);
+  text-align: left;
+}
+
+.result-container h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-dark);
+  font-size: 1.6em;
+  margin-bottom: 15px;
+}
+
+.result-container p {
+  font-size: 1.1em;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.highlight {
+  color: var(--primary-dark);
+  font-weight: 600;
+  background-color: rgba(0, 123, 255, 0.08); /* Lighter primary color for highlight background */
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.price {
+  color: var(--accent-color); /* Success green for price */
+  font-weight: 700;
+  font-size: 1.25em;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 25px;
+    margin: 15px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+  .result-container {
+    padding: 20px;
+  }
+
+  .result-container p {
+    font-size: 1em;
+  }
+}
